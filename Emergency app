@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Alert App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            text-align: center;
+            max-width: 300px;
+        }
+        h1 {
+            color: #ff0000;
+        }
+        #emergencyBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #emergencyBtn:active {
+            background-color: #cc0000;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Emergency Alert App</h1>
+    <button id="emergencyBtn">Send Emergency Alert</button>
+    <div class="status" id="statusMessage">Press the button in case of emergency.</div>
+</div>
+
+<script>
+    document.getElementById('emergencyBtn').addEventListener('click', function() {
+        // Display a loading message
+        const statusMessage = document.getElementById('statusMessage');
+        statusMessage.innerHTML = "Sending emergency alert...";
+
+        // Simulate sending alert message (in a real app, add backend API request here)
+        setTimeout(() => {
+            statusMessage.innerHTML = "Alert sent! Help is on the way.";
+            alert("Emergency alert has been sent to your contacts!");
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
